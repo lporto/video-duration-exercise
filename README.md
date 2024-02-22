@@ -79,6 +79,6 @@ sequenceDiagram
     Note right of Browser: Next.js fetches course duration
     FastAPI->>Firestore: Get "course" with {course_id}
     Firestore-->>FastAPI: { "videos": [], "duration": total_duration_in_seconds }
-    FastAPI-->Browser: { "duration": "HH:MM:SS.ss" }
+    FastAPI-->>Browser: { "duration": "HH:MM:SS.ss" }
     Note right of Browser: total video duration rendered on page
 ```
