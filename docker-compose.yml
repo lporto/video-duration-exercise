@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  frontend:
+    build:
+      context: ./video-duration-app
+    ports:
+      - "3000:3000"
+
+  backend:
+    build:
+      context: ./video-duration-api
+    ports:
+      - "8000:8000"
+
