@@ -36,6 +36,7 @@ Upload 1+ videos and get the total duration of a "course"
 
 ## API endpoints
 FastAPI endpoints on http://104.196.209.243:8000
+[<img src="https://run.pstmn.io/button.svg" alt="Run In Postman" style="width: 128px; height: 32px;">](https://app.getpostman.com/run-collection/33030078-97f97a57-78fa-4d6a-a817-cad25813252c?action=collection%2Ffork&source=rip_markdown&collection-url=entityId%3D33030078-97f97a57-78fa-4d6a-a817-cad25813252c%26entityType%3Dcollection%26workspaceId%3D9222205e-2931-4bf9-ae62-763c01d3a015)
 
 ### POST /upload
 Upload 1+ video files for a "course"
@@ -46,6 +47,8 @@ Response status: 201 Created
 
 Response body: `{ "course_id": [course_id] }`
 
+[Example on Postman](https://www.postman.com/lucaspporto/workspace/coding-exercise/request/33030078-3f6307b0-8070-4071-90e4-e173633591f2)
+
 ### GET /course/{course_id}/duration
 Query total duration for a course
 
@@ -53,7 +56,7 @@ Parameters: `course_id` on URL
 
 Response: `{ "duration": "HH:MM:SS.ss" }`
 
-[Example](http://104.196.209.243:8000/course/7gzOnqBWxHgSCLWXqI1Z/duration)
+[Example on Postman](https://www.postman.com/lucaspporto/workspace/coding-exercise/request/33030078-d39a1ca1-a045-4d54-bc6b-cec5b533675c)
 
 ## Sequence diagram
 
