@@ -42,7 +42,7 @@ def upload_video(files: list[UploadFile]):
         _, doc_ref = db.collection("courses").add(course)
 
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Error processing video: {file.filename}")
+        raise HTTPException(status_code=500, detail=f"Error processing video: {str(e)}")
 
     return { "course_id": doc_ref.id }
 
@@ -56,3 +56,13 @@ def course_duration(course_id: str):
         raise HTTPException(status_code=500, detail=f"Error finding course: {str(e)}")
 
     return { "duration": total_duration }
+
+@app.get("/course/{course_id}")
+def find_course(course_id: str):
+    try:
+        course_ref = db.collection("courses").document(course_id)
+        course = course_ref.get()
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error finding course: {str(e)}")
+
+    return course.to_dict()
